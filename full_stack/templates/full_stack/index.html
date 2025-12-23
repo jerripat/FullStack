@@ -1,0 +1,31 @@
+{%  extends 'base.html' %}
+{% load static %}
+
+{%  block title %}
+    Full Stack Development L.L.C.
+{%  endblock %}
+
+{%  block css_files %}
+    <link rel="stylesheet" href="{% static 'style/main.css' %}">
+</link>
+{%  endblock %}
+
+{%  block content %}
+<section id='welcome'>
+<h1>Welcome to Full Stack Development L.L.C.</h1>
+<p>This is a simple website developed using HTML, CSS, and Bootstrap.
+    my goal is to create web applications for the community.</p>
+<img src="{% static 'images/spidey.jpg' %}" alt="Logo">
+
+</section>
+
+<section id='services'>
+<h2>Our Services</h2>
+
+</section>
+
+<section id='about'>
+        <h2>About Us</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed ipsum ac nunc pulvinar posuere vel vel justo. Maecenas vel justo vel eros viverra sodales vel nec velit. Donec vel risus quis ligula elementum ultricies. Sed finibus, turpis in faucibus efficitur, felis neque gravida lectus, at fermentum risus nisi ut neque. Nullam auctor, mauris vel scelerisque fringilla, dui mi gravida nunc, a vestibulum turpis ipsum vel velit.</p>
+    </section>
+{% endblock %}

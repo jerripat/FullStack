@@ -1,10 +1,10 @@
-body {
- background-color: #2b655c;
+html,body {
+ background-color: #1c3822;
     padding:0;
     margin: 0;
 }
 #welcome {
-  background-color: #1c3822;
+  background-color: #2b655c;
   color: white;
   padding: 10px;
   text-align: center;
@@ -13,7 +13,7 @@ body {
   width: 100%;
   height: auto;
   padding: 20px;
-
+margin-top: -40px;
 }
 
 #welcome p {
@@ -36,20 +36,45 @@ body {
   color: white;
   padding: 10px;
   text-align: center;
-  font-size: 2em;
+  font-size: 1.5rem;
   font-family: Arial, sans-serif;
   width: 100%;
   height: 300px;
   padding: 20px;
 }
+
+#services h2 {
+    font-size: 1.5rem;
+}
+#services ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
 #about {
     background-color: #1c3822;
   color: white;
     padding: 10px;
     text-align: center;
-    font-size: 2em;
+    font-size: 1em;
     font-family: Arial, sans-serif;
     width: 100%;
     height: auto;
     padding: 20px;
+    margin-bottom: -40px;
+}
+#about img {
+    width: 200px;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+    padding: 10px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.8);
+    border: 5px solid #567518;
+}
+#footer {
+    background-color: #567518;
+  color: white;
 }

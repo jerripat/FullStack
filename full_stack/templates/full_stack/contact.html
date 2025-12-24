@@ -1,12 +1,28 @@
-{% extends 'base.html' %}
+{%  extends 'base.html' %}
 {%  load static %}
-{%  block title %}
-    Contact Us
-{%  endblock %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+        {% block title %}Contact Us{% endblock %}
+        {%  block css_files %}
+            <link rel="stylesheet" href="{% static 'style/contact.css' %}">
+        {%  endblock %}
 
-{% block css_filed %}
-    <link rel="stylesheet" href="{% static 'style/contact.css' %}">
-{% endblock %}
-
+</head>
+<body>
 {% block content %}
+    <div class="container" id="contact">
+  <h1>Contact Us</h1>
+  <form action="mailto:jerripatterson@gmail.com" method="post" enctype="text/plain">
+  <input type="text" name="name" placeholder="Your Name">
+  <input type="email" name="email" placeholder="Your Email">
+  <textarea name="message" placeholder="Your Message"></textarea>
+  <button type="submit">Submit</button>
+</form>
+
+</div>
+
 {% endblock %}
+</body>
+</html>

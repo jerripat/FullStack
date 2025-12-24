@@ -1,10 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{%  load static %}
+{%  block title %}
+    Contact Us
+{%  endblock %}
 
-</body>
-</html>
+{% block css_filed %}
+    <link rel="stylesheet" href="{% static 'style/contact.css' %}">
+{% endblock %}
+
+{% block content %}
+{% endblock %}

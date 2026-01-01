@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 
 from pathlib import Path
 import os
-import django_heroku
+
 from decouple import config
 import dj_database_url
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -134,6 +134,6 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, "full_stack", "static")]
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 # Configure Django to use a real database in production
-import django_heroku
+
 
 

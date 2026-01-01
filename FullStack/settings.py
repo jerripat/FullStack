@@ -23,15 +23,22 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = config('SECRET_KEY')
+
+SECRET_KEY = config("SECRET_KEY", default="django-insecure-dev-only")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
 
-DEBUG =os.environ.get("DEBUG", "False") == "True"
+DEBUG = config("DEBUG", default=False, cast=bool)
 
 
-ALLOWED_HOSTS = ["*"]
+
+ALLOWED_HOSTS = config(
+    "ALLOWED_HOSTS",
+    default="localhost,127.0.0.1,fullstackdevelopment.herokuapp.com,.herokuapp.com",
+    cast=lambda v: [s.strip() for s in v.split(",")]
+)
+
 
 
 # Application definition
@@ -82,11 +89,9 @@ WSGI_APPLICATION = 'FullStack.wsgi.application'
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    "default": dj_database_url.config(default=f"sqlite:///{BASE_DIR/'db.sqlite3'}")
 }
+
 
 
 # Password validation
@@ -123,10 +128,12 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
-STATIC_URL = 'static/'
-STATICFILES_DIRS = [os.path.join (BASE_DIR, 'full_stack', 'static')]
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATIC_URL = "static/"
+STATIC_ROOT = BASE_DIR / "staticfiles"
+STATICFILES_DIRS = [os.path.join(BASE_DIR, "full_stack", "static")]
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
 # Configure Django to use a real database in production
 import django_heroku
-django_heroku.settings(locals())
+
 

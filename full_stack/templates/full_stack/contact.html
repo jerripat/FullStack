@@ -1,28 +1,39 @@
-{%  extends 'base.html' %}
-{%  load static %}
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-        {% block title %}Contact Us{% endblock %}
-        {%  block css_files %}
-            <link rel="stylesheet" href="{% static 'style/contact.css' %}">
-        {%  endblock %}
+  <meta charset="UTF-8">
+  <title>{% block title %}Full Stack{% endblock %}</title>
 
+  {% block styles %}
+    <link rel="stylesheet" href="{% static 'style/contact.css' %}">
+  {% endblock %}
 </head>
 <body>
 {% block content %}
-    <div class="container" id="contact">
-  <h1>Contact Us</h1>
-  <form action="mailto:jerripatterson@gmail.com" method="post" enctype="text/plain">
-  <input type="text" name="name" placeholder="Your Name">
-  <input type="email" name="email" placeholder="Your Email">
-  <textarea name="message" placeholder="Your Message"></textarea>
-  <button type="submit">Submit</button>
-</form>
+<div id="contactus">
+    <h1>Contact Us</h1>
+  <section id="sectionone">
 
+
+    <form
+      action="mailto:jerripatterson@gmail.com"
+      method="post"
+      enctype="text/plain"
+    >
+      <input type="text" id="name" name="name" placeholder="Name" required>
+      <input type="email" id="email" name="email" placeholder="Email" required>
+      <textarea id="message" name="message" placeholder="Message" required></textarea>
+      <input type="submit" value="Submit">
+    </form>
+  </section>
 </div>
+    <section id="sectiontwo">
+    <img id="contactus" src="{% static 'images/FullLogo.png' %}" alt="Contact Us Image">
 
+    </section>
 {% endblock %}
+
 </body>
+<footer> Copyright &copy; Full Stack Development L.L.C. ph. (918) 822-5937</footer>
 </html>

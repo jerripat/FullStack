@@ -24,11 +24,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = config('SECRET_KEY')
-#SECRET_KEY = 'jfgudd755jdjjjdlsa009kkxj15v84k9t8c5j'
+#SECRET_KEY = 'pc#0w(=hb)3ctk^$fh-gun2)yx^s(dr9mgy#9fq5g=-@t55$g_'
 # SECURITY WARNING: don't run with debug turned on in production!
 
 
-DEBUG = True   #os.environ.get("DEBUG", "False") == "True"
+DEBUG =os.environ.get("DEBUG", "False") == "True"
 
 
 ALLOWED_HOSTS = ["*"]
@@ -127,4 +127,6 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [os.path.join (BASE_DIR, 'full_stack', 'static')]
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # Configure Django to use a real database in production
+import django_heroku
 django_heroku.settings(locals())
+

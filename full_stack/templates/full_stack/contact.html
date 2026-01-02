@@ -1,39 +1,73 @@
+{% extends 'base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>{% block title %}Full Stack{% endblock %}</title>
 
-  {% block styles %}
-    <link rel="stylesheet" href="{% static 'style/contact.css' %}">
-  {% endblock %}
-</head>
-<body>
-{% block content %}
-<div id="contactus">
-    <h1>Contact Us</h1>
-  <section id="sectionone">
+{% block title %}Contact Us{% endblock %}
 
-
-    <form
-      action="mailto:jerripatterson@gmail.com"
-      method="post"
-      enctype="text/plain"
-    >
-      <input type="text" id="name" name="name" placeholder="Name" required>
-      <input type="email" id="email" name="email" placeholder="Email" required>
-      <textarea id="message" name="message" placeholder="Message" required></textarea>
-      <input type="submit" value="Submit">
-    </form>
-  </section>
-</div>
-    <section id="sectiontwo">
-    <img id="contactus" src="{% static 'images/FullLogo.png' %}" alt="Contact Us Image">
-
-    </section>
+{% block css_files %}
+  <link rel="stylesheet" href="{% static 'style/contact.css' %}">
 {% endblock %}
 
-</body>
-<footer> Copyright &copy; Full Stack Development L.L.C. ph. (918) 822-5937</footer>
-</html>
+{% block content %}
+
+<section id="sectionone">
+  <div class="accordion" id="accordionExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        Accordion Item #1
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <strong>This is the first item’s accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It’s also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+        Accordion Item #2
+      </button>
+    </h2>
+    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <strong>This is the second item’s accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It’s also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+        Accordion Item #3
+      </button>
+    </h2>
+    <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <strong>This is the third item’s accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It’s also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section id="sectiontwo">
+  <form class="w-50">
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Email address</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+    </div>
+
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Message</label>
+      <input type="text" class="form-control" id="exampleInputPassword1">
+    </div>
+    <a href="mailto:jerripatterson@gmail.com?subject=Hello&body=I%20would%20like%20to%20get%20in%20touch.">
+  <button type="button">Send Email</button>
+</a>
+
+
+  </form>
+</section>
+
+{% endblock %}

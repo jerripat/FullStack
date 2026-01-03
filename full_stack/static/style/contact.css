@@ -46,7 +46,7 @@ img {
     color: white;
     font-size: 30px;
     margin-top: 10px;
-    border: 1px solid #ccc;
+    border: transparent;
     border-radius: 8px;
 }
 footer {

@@ -8,18 +8,20 @@ body {
 
 #sectionone {
   height: 20rem;
+  width: 80%;
+  margin: 100px auto; /* centers horizontally */
   display: block;
-  align-items: center;
-    background: linear-gradient(to bottom right, #00d0ff, #327db2);
-    justify-content: center;
-    color: white;
-    font-size: 24px;
-    margin-top: 10px;
-    border: 1px solid #ccc;
-    text-align: center;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+
+  background: linear-gradient(to bottom right, #00d0ff, #327db2);
+  color: white;
+  font-size: 24px;
+  text-align: center;
+
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
 }
+
 #accordion {
     width: 65%;
     margin: 0 auto;

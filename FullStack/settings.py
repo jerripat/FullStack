@@ -27,11 +27,14 @@ SECRET_KEY = config("SECRET_KEY", default="django-insecure-dev-only")
 
 DEBUG = config("DEBUG", default=False, cast=bool)
 
-ALLOWED_HOSTS = config(
-    "ALLOWED_HOSTS",
-    default="localhost,127.0.0.1,fullstackdevelopment.herokuapp.com,.herokuapp.com,.jerripat.com",
-    cast=lambda v: [s.strip() for s in v.split(",") if s.strip()],
-)
+ALLOWED_HOSTS = [
+    "localhost",
+    "127.0.0.1",
+    "fullstackdevelopment.herokuapp.com",
+    ".herokuapp.com",
+    "jerripat.com",
+    "www.jerripat.com",
+]
 
 
 # Application definition
